@@ -56,9 +56,9 @@
   
 ![image](https://github.com/mkannan007/playwright-typescript-cucumber/assets/37662555/ec49b575-d25c-4fa8-8f23-dcab8cab09e2)
 
-## To see the multi cucumber html report
+## To see the multi cucumber html report for tablewise viewing to high level report with Pie charts
 ### Run the script in terminal
-`npm run cucumber:html:report`
+- `npm run cucumber:html:report`
 
 - `Project Explorer --> test --> target --> html`
 - Open `index.html` in any browser
