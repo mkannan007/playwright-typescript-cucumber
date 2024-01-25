@@ -1,0 +1,32 @@
+{
+  "name": "playwright-typescript-cucumber",
+  "version": "1.0.0",
+  "description": "playwright-typescript-cucumber",
+  "scripts": {
+    "format": "prettier --write test/**/*.ts",
+    "cucumber:test:init:setup": "npx ts-node test/scripts/cucumber-test-init-setup.script.ts",
+    "cucumber:test:run:local": "npm run cucumber:test:init:setup && cucumber-js --config test/config/cucumber.conf.js --profile default",
+    "cucumber:html:report": "npx ts-node test/scripts/cucumber-html-report-ui.script.ts"
+  },
+  "keywords": [
+    "Playwright",
+    "Cucumber",
+    "Typescript"
+  ],
+  "author": "kannan",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@cucumber/cucumber-expressions": "^17.0.1",
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "@playwright/test": "^1.41.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.11.6",
+    "fs-extra": "^11.2.0",
+    "multiple-cucumber-html-reporter": "^3.6.1",
+    "prettier": "^3.2.4",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.3.3"
+  }
+}

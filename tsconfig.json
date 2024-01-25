@@ -1,0 +1,34 @@
+{
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+  "compilerOptions": {
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noEmit": true,
+    "types": [
+      "node",
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "config/*": ["test/config/*"],
+      "hooks/*": ["test/hooks/*"],
+      "page/*": ["test/page/*"],
+      "pageObjects/*": ["test/pageObjects/*"],
+      "scripts/*": ["test/scripts/*"]
+    },
+    "target": "ESNext",
+  },
+  "include": ["test/**/*.ts", "test/**/*.js"],
+}
