@@ -48,7 +48,7 @@
 
 - `In the expanded Scenario view --> Scroll to the bottom --> Click on the link to download` **Download attachment.zip**
 - open the url https://trace.playwright.dev/
-- Upload the downloaed trace view using drap and drop or through select file
+- Upload the .zip file trace view using drap and drop or through select file
 
 ![image](https://github.com/mkannan007/playwright-typescript-cucumber/assets/37662555/34bde706-d2e0-48ad-80d9-e7827badf775)
 
