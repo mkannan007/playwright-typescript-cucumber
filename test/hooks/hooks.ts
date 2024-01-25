@@ -46,11 +46,13 @@ Before({ timeout: 30000 }, async function ({ pickle }: ITestCaseHookParameter) {
     },
   });
 
-  await context.tracing.start({
-    screenshots: true,
-    snapshots: true,
-    title: pickle.name,
-  });
+  if (pickle.name.includes('Premier League')) {
+    await context.tracing.start({
+      screenshots: true,
+      snapshots: true,
+      title: pickle.name,
+    });
+  }
   page = await context.newPage();
   base.page = page;
 });
@@ -67,11 +69,11 @@ AfterStep(
 
 After({ timeout: 60000 }, async function ({ pickle }: ITestCaseHookParameter) {
   const tracePath = `test/target/traces/${pickle.name}.zip`;
-  await context.tracing.stop({ path: tracePath });
   const videoPath = await base.page.video().path();
   this.attach(readFileSync(videoPath), 'video/webm');
 
   if (pickle.name.includes('Premier League')) {
+    await context.tracing.stop({ path: tracePath });
     this.attach(readFileSync(tracePath), 'application/zip');
   }
 

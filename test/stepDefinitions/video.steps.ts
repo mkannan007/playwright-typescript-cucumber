@@ -23,7 +23,7 @@ When('I click on the video big play button', async (): Promise<void> => {
   await videoPage.waitForVideoContainer();
   await videoPage.waitForVideoControl();
   await videoPage.clickBigPlayButton();
-  await videoPage.waitUntilVideoAdLabelDisappear();
+  await videoPage.waitUntilVideoLoadingSpinnerDisappear();
 
   currentVideoSource = await videoPage.getVideoSourceAttributeValue();
 
@@ -70,6 +70,7 @@ When('I click on the video control skip button', async (): Promise<void> => {
   videoSourcePlaying = await videoPage.getVideoSourceAttributeValue();
 
   await videoPage.clickSkipVideo();
+  await videoPage.waitUntilVideoLoadingSpinnerDisappear();
   await videoPage.waitUntilVideoAdLabelDisappear();
 });
 
@@ -106,6 +107,7 @@ When(
   'I click on the video control full screen button',
   async (): Promise<void> => {
     await videoPage.clickFullscreen();
+    await videoPage.waitUntilVideoLoadingSpinnerDisappear();
     await videoPage.waitUntilVideoAdLabelDisappear();
   },
 );
@@ -137,6 +139,7 @@ Then(
       progressControlValue = await videoPage.getProgressControlAttribute();
     } while (Number(progressControlValue) <= 99);
 
+    await videoPage.waitUntilVideoLoadingSpinnerDisappear();
     await videoPage.waitUntilVideoAdLabelDisappear();
     currentVideoSource = await videoPage.getVideoSourceAttributeValue();
 

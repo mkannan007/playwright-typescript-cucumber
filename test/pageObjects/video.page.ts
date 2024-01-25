@@ -19,6 +19,7 @@ export class VideoPage {
     volumeControl: string;
     fullscreenControl: string;
     videoAdLabel: string;
+    videoLoadingSpinner: string;
   };
 
   constructor(page: Page) {
@@ -35,6 +36,7 @@ export class VideoPage {
       volumeControl: '[class*="volume-menu-button"]',
       fullscreenControl: '[class*="fullscreen-control"]',
       videoAdLabel: '[class*="video-ad-label"]',
+      videoLoadingSpinner: '[class*="vjs-loading-spinner-icon"]',
     };
   }
 
@@ -192,6 +194,14 @@ export class VideoPage {
     return await base.page
       .locator(this.locators.videoContainer)
       .locator(this.locators.videoAdLabel)
-      .waitFor({ state: 'hidden', timeout: 60000 });
+      .waitFor({ state: 'hidden', timeout: 120000 });
+  }
+
+  public async waitUntilVideoLoadingSpinnerDisappear(): Promise<void> {
+    await base.page.waitForTimeout(3000);
+    return await base.page
+      .locator(this.locators.videoContainer)
+      .locator(this.locators.videoLoadingSpinner)
+      .waitFor({ state: 'hidden', timeout: 30000 });
   }
 }
