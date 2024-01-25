@@ -26,7 +26,7 @@
 ### To Run the test
 `npm run cucumber:test:run:local`
 
-# A Sample Test Report `target` folder is already pushed to the main page for your reference as below
+# A Sample Test Report `target` folder is already pushed to the main branch for your reference as below
 ## To see the html report after the test execution
 
 - `Project Explorer --> test --> target --> html`
