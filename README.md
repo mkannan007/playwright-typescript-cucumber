@@ -32,6 +32,8 @@
 - `Project Explorer --> test --> target --> html`
 - Open `cucumber-report.html` in any browser
 
+![image](https://github.com/mkannan007/playwright-typescript-cucumber/assets/37662555/c79322ff-1d0a-4f2f-a99f-b727215617bd)
+
 ## Cucumber HTML Report Generated
 
 ![image](https://github.com/mkannan007/playwright-typescript-cucumber/assets/37662555/7e270d37-a8ea-4f74-b8a2-e1eff6f0e5a3)
