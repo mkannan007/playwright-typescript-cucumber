@@ -16,7 +16,7 @@ Given('I navigate to the Daily Mail video page', async (): Promise<void> => {
     await commonPage.clickAcceptCookiesButton();
   }
 
-  expect(await base.page.title()).toContain('Mail Online Videos');
+  expect(await base.page.title()).toContain('Daily Mail Online');
 });
 
 When('I click on the video big play button', async (): Promise<void> => {

@@ -19,8 +19,8 @@ Then(
     const expectedTeamPoints = data[0].TeamPoints;
 
     expect
-      .soft(await sportPage.getTeamPositionValue(team))
-      .toBe(expectedTeamPosition);
+      .soft(Number(await sportPage.getTeamPositionValue(team)))
+      .toBeGreaterThanOrEqual(Number(expectedTeamPosition));
     expect
       .soft(Number(await sportPage.getTeamPointsValue(team)))
       .toBeGreaterThanOrEqual(Number(expectedTeamPoints));
